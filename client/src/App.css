@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 * {
-  background-color: rgb(10, 25, 47);
+  /* background-color: rgb(10, 25, 47); */
   color: aliceblue;
+  margin: 0%;
+  padding: 0%;
   font-family: "Montserrat", sans-serif;
 }
-
+body{
+    background-color: rgb(10, 25, 47);
+}
 a{
   color: #fff;
 }
@@ -23,17 +27,30 @@ a{
 }
 
 .companies {
-  margin-left: 40px;
-  margin-top: 50px;
+  /* margin-left: 40px;
+  margin-top: 50px; */
   font-size: 12px;
 }
 .companies-div {
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
+  background-color: rgb(23, 42, 69);
+  padding: 0.5rem;
+  border-radius: 6px;
 }
-
+.companies-div:hover{
+  box-shadow:  0px 6px 6px rgba(0, 0, 0, 0.50);
+}
+.companies-div h1{
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+.companies-div h1 a:hover{
+  color: aqua;
+}
 .questions {
-  margin-left: 40px;
-  margin-top: 40px;
+  margin: 2rem;
+  /* margin-left: 40px;
+  margin-top: 40px; */
   font-size: 10px !important;
 }
 .company-name {
@@ -43,53 +60,84 @@ a{
   align-items: center;
   margin-top: 20px;
 }
-
+.questions h1{
+  margin-bottom: 0%;
+}
+.questions h1 a{
+  font-size: 2rem;
+  /* margin-bottom: 0%; */
+}
+.questions h1 a:hover{
+  color: aqua;
+  /* text-shadow: rgb(255 255 255 / 25%) 5px 5px 10px; */
+  /* color: rgb(97, 88, 88); */
+}
 .questions a {
   text-decoration: none;
 }
 
 .filter-button {
   display: flex;
+  margin-left: 1.5rem;
+  padding-top: 10px;
   /* margin-bottom: 30px; */
 }
 
 .filter-button a {
   /* background-color: aqua; */
   color: rgb(10, 25, 47);
-  font-size: 16px;
+  font-size: 18px;
   /* border-radius: 12px; */
-  margin-left: 10px !important;
+  margin-left: 5px !important;
   border: none;
   padding: 10px;
+  cursor: pointer;
   font-weight: bold;
 }
 .easy{
-  color: green !important;
+  color: #21FD5E!important;
+  font-weight: 300 !important;
 }
 .medium{
   color: yellow !important;
+  font-weight: 300 !important;
 }
 .hard{
   color: red !important;
+  font-weight: 300 !important;
 }
 
 .difficulty {
-  position: absolute;
-  right: 175px;
+  /* position: absolute;
+  right: 175px; */
   color: aqua;
   font-size: 20px;
 }
 
 .percentage {
-  position: absolute;
-  right: 75px;
+  /* position: absolute;
+  right: 75px; */
   font-size: 20px;
 }
 
 .individual-question {
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  border-radius: 6px;
+  justify-content: space-between;
+  /* margin-block-end: 40px; */
+  background-color: rgb(23, 42, 69);
 }
-
+/* rgb(2 12 27 / 80%) */
+.individual-question:hover{
+  box-shadow:  0px 6px 6px rgba(0, 0, 0, 0.50);
+  transition: 0.1s;
+}
+.individual-question .details{
+  display: flex;
+  align-items: center;
+}
 .back-icon {
   margin-top: 20px;
   max-width: 40px;
@@ -103,7 +151,7 @@ a{
 }
 
 @media only screen and (max-width: 768px) {
-  .heading {
+  /* .heading {
     width: 100px;
   }
 
@@ -123,5 +171,5 @@ a{
     position: absolute;
     right: 25px !important;
     font-size: 18px !important;
-  }
+  } */
 }
