@@ -12,7 +12,6 @@ with open('data.json') as data_file:
 list_companies = []
 
 for i in all_questions:
-
     list_companies.append(i["Company_Name"])
 
 list_companies = list(dict.fromkeys(list_companies))
@@ -27,19 +26,30 @@ def getCompanies():
     )
 
 
-
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
 
 
 @app.route('/companies/<company>', methods=['GET'])
-def getMLH(company):
+def getQuestions(company):
     
     return jsonify(
         data=[question for question in all_questions if question["Company_Name"] == company]
     )
-
-
+    
+    
+@app.route('/companies/<company>/<difficulty>', methods=['GET'])
+def getQuestionsDifficulty(company,difficulty):
+    
+    all_filter = []
+    for question in all_questions:
+        if(question["Company_Name"] == company and question["Difficulty"]==difficulty):
+            all_filter.append(question)
+            
+    return jsonify(
+    data=all_filter
+    )
+   
 if __name__ == "__main__":
     app.run()
