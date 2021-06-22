@@ -43,6 +43,19 @@
   text-decoration: none;
 }
 
+.difficulty {
+  position: absolute;
+  right: 175px;
+  color: aqua;
+  font-size: 20px;
+}
+
+.percentage {
+  position: absolute;
+  right: 75px;
+  font-size: 20px;
+}
+
 .individual-question {
   margin-bottom: 40px;
 }
@@ -62,5 +75,23 @@
 @media only screen and (max-width: 768px) {
   .heading {
     width: 100px;
+  }
+
+  .individual-question {
+    margin-bottom: 40px;
+    width: 100px;
+  }
+  .difficulty {
+    position: absolute;
+    right: 100px;
+    font-size: 20px !important;
+    color: aqua;
+    font-size: 18px;
+  }
+
+  .percentage {
+    position: absolute;
+    right: 25px !important;
+    font-size: 18px !important;
   }
 }

@@ -28,6 +28,8 @@ const QuestionsComponent = (props) => {
       <div className="questions">
         {questions?.data?.map((data) => (
           <div className="individual-question">
+            <span className="difficulty"> {data.Difficulty}</span>
+            <span className="percentage"> {data.Percentage}</span>
             <h1>
               <a href={`${data.Link}`} target="_blank" rel="noreferrer">
                 {data.Name}
