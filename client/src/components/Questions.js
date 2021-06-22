@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./Header";
+import { FaBackward } from "react-icons/fa";
 
 const QuestionsComponent = (props) => {
   const [isLoading, setLoading] = useState(true);
@@ -17,7 +18,14 @@ const QuestionsComponent = (props) => {
   return (
     <div>
       <Header />
-      <div className="company-name">{questions?.data?.[0].Company_Name}</div>
+      <div className="company-name">
+        {questions?.data?.[0].Company_Name}{" "}
+        <div className="back-icon">
+          <a href="/">
+            <FaBackward />
+          </a>
+        </div>
+      </div>
       <div className="questions">
         {questions?.data?.map((data) => (
           <div className="individual-question">

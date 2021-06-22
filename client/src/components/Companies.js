@@ -18,14 +18,21 @@ const CompanyComponent = () => {
   });
 
   if (isLoading) {
-    return <div className="companies">Loading...</div>;
+    return <div className="loading">Loading...</div>;
+  }
+
+  function refreshPage() {
+    setTimeout(() => {
+      window.location.reload(false);
+    }, 0);
+    console.log("page to reload");
   }
 
   return (
     <Router>
       <div className="companies">
         {companies?.data?.map((data) => (
-          <Link to={`/companies/${data}`}>
+          <Link to={`/companies/${data}`} onClick={refreshPage}>
             <h1>{data}</h1>
           </Link>
         ))}

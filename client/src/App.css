@@ -37,3 +37,15 @@
 .individual-question {
   margin-bottom: 40px;
 }
+
+.back-icon {
+  margin-top: 20px;
+  max-width: 40px;
+}
+
+.loading {
+  font-size: 20px;
+  margin-left: 40px;
+  margin-top: 20px;
+  font-weight: bold;
+}
