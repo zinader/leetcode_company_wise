@@ -30,20 +30,26 @@ const CompanyComponent = () => {
 
   return (
     <Router>
-      <div className="companies">
-        {companies?.data?.map((data) => (
-          <div className="companies-div">
-            <h1>
-              <Link
-                to={`/companies/${data}`}
-                onClick={refreshPage}
-                style={{ textDecoration: "none" }}
-              >
-                {data}
-              </Link>
-            </h1>
+      <div className='container-fluid'>
+        <div className="companies">
+          <div className='row'>
+            {companies?.data?.map((data) => (
+              <div className="col-md-4">
+                <div className='companies-div'>
+                  <h1>
+                    <Link
+                      to={`/companies/${data}`}
+                      onClick={refreshPage}
+                      style={{ textDecoration: "none" }}
+                    >
+                      {data}
+                    </Link>
+                  </h1>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </Router>
   );

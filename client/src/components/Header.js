@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 function Header() {
   return (
-    <div>
+    <div className='mb-4'>
       <div className="heading">Company Wise Leetcode Questions </div>
       <div className="github">
         <a
