@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, BrowserRouter as Router } from "react-router-dom";
+import HashLoader from "react-spinners/HashLoader";
 
 import "../App";
 

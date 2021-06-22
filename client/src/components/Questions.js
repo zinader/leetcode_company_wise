@@ -7,6 +7,7 @@ const QuestionsComponent = (props) => {
   const [questions, setQuestions] = useState([]);
   const [apiData, setApiData] = useState([]);
   const [companyName, setCompanyName] = useState("");
+  const [isLoading, setLoading] = useState(true);
 
   const sortCat = (q) => {
     var newList = apiData?.filter((i) => {
@@ -24,11 +25,20 @@ const QuestionsComponent = (props) => {
         .then((res) => {
           setApiData(res.data.data);
           setQuestions(res.data.data);
+          setLoading(false);
         });
 
       setCompanyName(props.match.url.split("/")[2]);
     }, 500);
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="no-results">
+        <h3>Loading...</h3>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -80,7 +90,9 @@ const QuestionsComponent = (props) => {
               ))}
             </>
           ) : (
-            <h3>No results!</h3>
+            <div className="no-results">
+              <h3>No results!</h3>
+            </div>
           )}
         </div>
       </div>
