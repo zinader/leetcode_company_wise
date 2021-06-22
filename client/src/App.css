@@ -5,6 +5,9 @@
   font-family: "Montserrat", sans-serif;
 }
 
+a{
+  color: #fff;
+}
 .heading {
   margin-left: 20px;
   margin-top: 20px;
@@ -36,6 +39,8 @@
 .company-name {
   font-size: 35px;
   margin-left: 40px;
+  display: flex;
+  align-items: center;
   margin-top: 20px;
 }
 
@@ -44,18 +49,28 @@
 }
 
 .filter-button {
-  margin-bottom: 30px;
+  display: flex;
+  /* margin-bottom: 30px; */
 }
 
-.filter-button Button {
-  background-color: aqua;
+.filter-button a {
+  /* background-color: aqua; */
   color: rgb(10, 25, 47);
-  font-size: 20px;
-  border-radius: 12px;
-  margin-left: 20px !important;
+  font-size: 16px;
+  /* border-radius: 12px; */
+  margin-left: 10px !important;
   border: none;
   padding: 10px;
   font-weight: bold;
+}
+.easy{
+  color: green !important;
+}
+.medium{
+  color: yellow !important;
+}
+.hard{
+  color: red !important;
 }
 
 .difficulty {

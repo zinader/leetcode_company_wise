@@ -19,16 +19,25 @@ const QuestionsComponent = (props) => {
     <div>
       <Header />
       <div className="company-name">
-        {questions?.data?.[0].Company_Name}{" "}
-        <span className="filter-button">
-          <Button variant="light">Easy</Button>{" "}
-          <Button variant="light">Medium</Button>{" "}
-          <Button variant="light">Hard</Button>{" "}
-        </span>
-        <div className="back-icon">
-          <a href="/">
-            <FaBackward />
+        <a className='pr-3' href="/">
+          <FaBackward />
+        </a>
+        <span>{questions?.data?.[0].Company_Name}</span>
+        <div className="filter-button">
+          <a className='easy'>
+            #Easy
           </a>
+          <a className='medium'>
+            #Medium
+          </a>
+          <a className='hard'>
+            #Hard
+          </a>
+          {/* <Button variant="light">Easy</Button>
+          <Button variant="light">Medium</Button>
+          <Button variant="light">Hard</Button> */}
+        </div>
+        <div className="back-icon">
         </div>
       </div>
       <div className="questions">
