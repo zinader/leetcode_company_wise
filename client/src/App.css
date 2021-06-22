@@ -41,7 +41,7 @@ a {
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
 }
 .companies-div h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 0;
 }
 .companies-div h1 a:hover {
@@ -54,7 +54,7 @@ a {
   font-size: 10px !important;
 }
 .company-name {
-  font-size: 35px;
+  font-size: 30px;
   margin-left: 40px;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@ a {
   margin-bottom: 0%;
 }
 .questions h1 a {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   /* margin-bottom: 0%; */
 }
 .questions h1 a:hover {
@@ -182,5 +182,12 @@ a {
     position: absolute;
     top: 460px;
     left: 80px;
+  }
+  .difficulty {
+    font-size: 15px;
+  }
+
+  .individual-question .details {
+    align-items: center;
   }
 }
