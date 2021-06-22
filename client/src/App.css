@@ -11,6 +11,13 @@
   font-size: 45px;
 }
 
+.github {
+  font-size: 45px;
+  position: absolute;
+  right: 35px;
+  top: 30px;
+}
+
 .companies {
   margin-left: 40px;
   margin-top: 20px;
@@ -48,4 +55,10 @@
   margin-left: 40px;
   margin-top: 20px;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+  .heading {
+    width: 100px;
+  }
 }

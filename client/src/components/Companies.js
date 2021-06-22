@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Link, BrowserRouter as Router } from "react-router-dom";
 
 import "../App";
 
@@ -32,7 +32,11 @@ const CompanyComponent = () => {
     <Router>
       <div className="companies">
         {companies?.data?.map((data) => (
-          <Link to={`/companies/${data}`} onClick={refreshPage}>
+          <Link
+            to={`/companies/${data}`}
+            onClick={refreshPage}
+            style={{ textDecoration: "none" }}
+          >
             <h1>{data}</h1>
           </Link>
         ))}

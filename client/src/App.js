@@ -1,7 +1,7 @@
 import "./App.css";
 import MainComponent from "./components/MainComponent";
 import QuestionsComponent from "./components/Questions";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (

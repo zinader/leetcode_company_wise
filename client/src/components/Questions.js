@@ -4,14 +4,13 @@ import Header from "./Header";
 import { FaBackward } from "react-icons/fa";
 
 const QuestionsComponent = (props) => {
-  const [isLoading, setLoading] = useState(true);
   const [questions, setQuestions] = useState([]);
 
   useEffect(() => {
     setTimeout(async () => {
       await axios
         .get("https://leetcode-api.herokuapp.com" + props.match.url)
-        .then((res) => setQuestions(res.data), setLoading(false));
+        .then((res) => setQuestions(res.data));
     }, 500);
   });
 
@@ -30,7 +29,7 @@ const QuestionsComponent = (props) => {
         {questions?.data?.map((data) => (
           <div className="individual-question">
             <h1>
-              <a href={`${data.Link}`} target="_blank">
+              <a href={`${data.Link}`} target="_blank" rel="noreferrer">
                 {data.Name}
               </a>
             </h1>
