@@ -1,14 +1,10 @@
 import pdftotext
 import re
 import json
-    
-
-json_objects = []
-
 import os
-
+    
+json_objects = []
 path = './pdfs'
-
 files = os.listdir(path)
 
 list_companies = []
@@ -46,9 +42,9 @@ for j in list_companies:
     for i in res:
         
         if(i[0][0:6]=="(/prob" and ")" in i[0]):
-            # print(i) 
+
             company_name = j[:-1]
-            # print(company_name)
+
             res2 = re.findall(r'\(.*?\)', i[0])
             res3 = re.findall(r'\).*?\%', i[0])
             res4 = re.findall(r'\%.*', i[0])
@@ -69,19 +65,13 @@ for j in list_companies:
             string_encode = question_difficulty_percentage.encode("ascii", "ignore")
             string_decode = string_encode.decode()
 
-            
-            
             a = {"Company_Name": company_name, "Link": question_link, "Name": question_name, "Percentage":string_decode,"Difficulty":question_difficulty}
-            #print(a)
+
             
             json_objects.append(a)
             
-            
-    
-                
+         
 json_object = json.dumps(json_objects)
-
-
   
 with open("data.json", "w") as outfile:
     outfile.write(json_object)
