@@ -1,17 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
 * {
-  background-color: beige;
+  background-color: rgb(10, 25, 47);
+  color: aliceblue;
   font-family: "Montserrat", sans-serif;
 }
 
 .heading {
   margin-left: 20px;
   margin-top: 20px;
-  font-size: 40px;
+  font-size: 45px;
 }
 
 .companies {
   margin-left: 40px;
   margin-top: 20px;
   font-size: 15px;
+}
+
+.company-name {
+  font-size: 35px;
+  margin-left: 40px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.questions {
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 10px !important;
+}
+
+.questions a {
+  text-decoration: none;
+}
+
+.individual-question {
+  margin-bottom: 40px;
 }

@@ -1,13 +1,15 @@
 import "./App.css";
-import CompanyComponent from "./components/Companies";
+import MainComponent from "./components/MainComponent";
+import QuestionsComponent from "./components/Questions";
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div className="heading">Company Wise Leetcode Questions</div>
-      <div className="companies">
-        <CompanyComponent />
-      </div>
+    <div>
+      <Router>
+        <Route path="/" exact component={MainComponent} />
+        <Route path="/companies/:name" exact component={QuestionsComponent} />
+      </Router>
     </div>
   );
 }
