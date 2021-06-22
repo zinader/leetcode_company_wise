@@ -107,10 +107,8 @@ celerybeat.pid
 # Environments
 .env
 .venv
-.leetcode
 env/
 venv/
-leetcode/
 ENV/
 env.bak/
 venv.bak/
