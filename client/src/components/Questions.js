@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./Header";
 import { FaBackward } from "react-icons/fa";
+import Button from "react-bootstrap/Button";
 
 const QuestionsComponent = (props) => {
   const [questions, setQuestions] = useState([]);
@@ -19,6 +20,11 @@ const QuestionsComponent = (props) => {
       <Header />
       <div className="company-name">
         {questions?.data?.[0].Company_Name}{" "}
+        <span className="filter-button">
+          <Button variant="light">Easy</Button>{" "}
+          <Button variant="light">Medium</Button>{" "}
+          <Button variant="light">Hard</Button>{" "}
+        </span>
         <div className="back-icon">
           <a href="/">
             <FaBackward />

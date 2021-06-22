@@ -43,6 +43,21 @@
   text-decoration: none;
 }
 
+.filter-button {
+  margin-bottom: 30px;
+}
+
+.filter-button Button {
+  background-color: aqua;
+  color: rgb(10, 25, 47);
+  font-size: 20px;
+  border-radius: 12px;
+  margin-left: 20px !important;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+}
+
 .difficulty {
   position: absolute;
   right: 175px;
