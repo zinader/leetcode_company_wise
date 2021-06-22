@@ -6,10 +6,10 @@
   padding: 0%;
   font-family: "Montserrat", sans-serif;
 }
-body{
-    background-color: rgb(10, 25, 47);
+body {
+  background-color: rgb(10, 25, 47);
 }
-a{
+a {
   color: #fff;
 }
 .heading {
@@ -37,14 +37,14 @@ a{
   padding: 0.5rem;
   border-radius: 6px;
 }
-.companies-div:hover{
-  box-shadow:  0px 6px 6px rgba(0, 0, 0, 0.50);
+.companies-div:hover {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
 }
-.companies-div h1{
+.companies-div h1 {
   font-size: 2rem;
   margin-bottom: 0;
 }
-.companies-div h1 a:hover{
+.companies-div h1 a:hover {
   color: aqua;
 }
 .questions {
@@ -60,14 +60,14 @@ a{
   align-items: center;
   margin-top: 20px;
 }
-.questions h1{
+.questions h1 {
   margin-bottom: 0%;
 }
-.questions h1 a{
-  font-size: 2rem;
+.questions h1 a {
+  font-size: 1.4rem;
   /* margin-bottom: 0%; */
 }
-.questions h1 a:hover{
+.questions h1 a:hover {
   color: aqua;
   /* text-shadow: rgb(255 255 255 / 25%) 5px 5px 10px; */
   /* color: rgb(97, 88, 88); */
@@ -94,15 +94,15 @@ a{
   cursor: pointer;
   font-weight: bold;
 }
-.easy{
-  color: #21FD5E!important;
+.easy {
+  color: #21fd5e !important;
   font-weight: 300 !important;
 }
-.medium{
+.medium {
   color: yellow !important;
   font-weight: 300 !important;
 }
-.hard{
+.hard {
   color: red !important;
   font-weight: 300 !important;
 }
@@ -130,11 +130,11 @@ a{
   background-color: rgb(23, 42, 69);
 }
 /* rgb(2 12 27 / 80%) */
-.individual-question:hover{
-  box-shadow:  0px 6px 6px rgba(0, 0, 0, 0.50);
+.individual-question:hover {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
   transition: 0.1s;
 }
-.individual-question .details{
+.individual-question .details {
   display: flex;
   align-items: center;
 }
@@ -144,32 +144,28 @@ a{
 }
 
 .loading {
-  font-size: 20px;
-  margin-left: 40px;
-  margin-top: 20px;
-  font-weight: bold;
+  background-color: aliceblue !important;
+  color: #21fd5e !important;
+  position: absolute;
+  left: 400px;
+  top: 200px;
 }
 
 @media only screen and (max-width: 768px) {
-  /* .heading {
+  .heading {
     width: 100px;
   }
-
-  .individual-question {
-    margin-bottom: 40px;
-    width: 100px;
-  }
-  .difficulty {
+  .filter-button {
     position: absolute;
-    right: 100px;
-    font-size: 20px !important;
-    color: aqua;
-    font-size: 18px;
+    top: 360px;
+    margin-left: 30px;
   }
 
-  .percentage {
-    position: absolute;
-    right: 25px !important;
-    font-size: 18px !important;
-  } */
+  .company-name {
+    margin-bottom: 80px;
+  }
+
+  .questions {
+    width: 320px;
+  }
 }

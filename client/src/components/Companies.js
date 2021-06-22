@@ -5,21 +5,16 @@ import { Link, BrowserRouter as Router } from "react-router-dom";
 import "../App";
 
 const CompanyComponent = () => {
-  const [isLoading, setLoading] = useState(true);
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
     setTimeout(async () => {
       await axios
         .get("https://leetcode-api.herokuapp.com/companies")
-        .then((res) => setCompanies(res.data), setLoading(false));
+        .then((res) => setCompanies(res.data));
     }, 500);
     console.log(companies?.data?.[0]);
   });
-
-  if (isLoading) {
-    return <div className="loading">Loading...</div>;
-  }
 
   function refreshPage() {
     setTimeout(() => {
@@ -30,12 +25,12 @@ const CompanyComponent = () => {
 
   return (
     <Router>
-      <div className='container-fluid'>
+      <div className="container-fluid">
         <div className="companies">
-          <div className='row'>
+          <div className="row">
             {companies?.data?.map((data) => (
               <div className="col-md-4">
-                <div className='companies-div'>
+                <div className="companies-div">
                   <h1>
                     <Link
                       to={`/companies/${data}`}
