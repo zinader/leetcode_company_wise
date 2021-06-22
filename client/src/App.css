@@ -9,6 +9,7 @@
   margin-left: 20px;
   margin-top: 20px;
   font-size: 45px;
+  font-weight: bold;
 }
 
 .github {
@@ -20,21 +21,22 @@
 
 .companies {
   margin-left: 40px;
-  margin-top: 20px;
-  font-size: 15px;
+  margin-top: 50px;
+  font-size: 12px;
 }
-
-.company-name {
-  font-size: 35px;
-  margin-left: 40px;
-  margin-top: 20px;
-  font-weight: bold;
+.companies-div {
+  margin-bottom: 40px;
 }
 
 .questions {
   margin-left: 40px;
   margin-top: 40px;
   font-size: 10px !important;
+}
+.company-name {
+  font-size: 35px;
+  margin-left: 40px;
+  margin-top: 20px;
 }
 
 .questions a {

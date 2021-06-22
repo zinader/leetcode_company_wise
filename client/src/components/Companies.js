@@ -32,15 +32,17 @@ const CompanyComponent = () => {
     <Router>
       <div className="companies">
         {companies?.data?.map((data) => (
-          <h1>
-            <Link
-              to={`/companies/${data}`}
-              onClick={refreshPage}
-              style={{ textDecoration: "none" }}
-            >
-              {data}
-            </Link>
-          </h1>
+          <div className="companies-div">
+            <h1>
+              <Link
+                to={`/companies/${data}`}
+                onClick={refreshPage}
+                style={{ textDecoration: "none" }}
+              >
+                {data}
+              </Link>
+            </h1>
+          </div>
         ))}
       </div>
     </Router>
