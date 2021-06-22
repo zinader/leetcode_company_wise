@@ -1,3 +1,3 @@
-## Backend URL
+## URL
 
-https://leetcodecompanywise.web.app/
+https://leetcodecompanywise.co
