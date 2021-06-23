@@ -171,7 +171,7 @@ a {
 }
 
 .search-input {
-  color: rgb(10, 25, 47) !important;
+  color: rgba(255, 255, 255, 0.698) !important;
   font-weight: bold;
   border-radius: 6px;
   border: none;
