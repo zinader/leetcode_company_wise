@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "./Header";
 import { FaBackward } from "react-icons/fa";
+import HashLoader from "react-spinners/HashLoader";
 
 const QuestionsComponent = (props) => {
   const [questions, setQuestions] = useState([]);
@@ -35,7 +36,7 @@ const QuestionsComponent = (props) => {
   if (isLoading) {
     return (
       <div className="no-results">
-        <h3>Loading...</h3>
+        <HashLoader size={156} color="aqua" loading />
       </div>
     );
   }
