@@ -23,7 +23,6 @@ const QuestionsComponent = (props) => {
   };
 
   useEffect(() => {
-    console.log("t");
     setTimeout(async () => {
       await axios
         .get("https://leetcode-api.herokuapp.com" + props.match.url)
@@ -66,9 +65,6 @@ const QuestionsComponent = (props) => {
           <a className="all" onClick={() => sortCat("all")}>
             #all
           </a>
-          {/* <Button variant="light">Easy</Button>
-          <Button variant="light">Medium</Button>
-          <Button variant="light">Hard</Button> */}
         </div>
         <div className="back-icon"></div>
       </div>
@@ -78,22 +74,20 @@ const QuestionsComponent = (props) => {
             <>
               {questions?.map((data) => (
                 <div className="col-12">
-                  <div className="individual-question">
-                    <h1>
-                      <a href={`${data.Link}`} target="_blank" rel="noreferrer">
-                        {data.Name}
-                      </a>
-                    </h1>
-                    <div className="details">
-                      <span
-                        className={`difficulty pr-2 ${data.Difficulty.toLowerCase()}`}
-                      >
-                        {" "}
-                        {data.Difficulty.toLowerCase()}
-                      </span>
-                      {/* <span className="percentage"> {data.Percentage}</span> */}
+                  <a href={`${data.Link}`} target="_blank" rel="noreferrer">
+                    <div className="individual-question">
+                      <h1>{data.Name}</h1>
+                      <div className="details">
+                        <span
+                          className={`difficulty pr-2 ${data.Difficulty.toLowerCase()}`}
+                        >
+                          {" "}
+                          {data.Difficulty.toLowerCase()}
+                        </span>
+                        {/* <span className="percentage"> {data.Percentage}</span> */}
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </>

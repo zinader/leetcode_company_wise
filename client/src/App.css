@@ -62,16 +62,9 @@ a {
 }
 .questions h1 {
   margin-bottom: 0%;
-}
-.questions h1 a {
   font-size: 27px;
-  /* margin-bottom: 0%; */
 }
-.questions h1 a:hover {
-  color: aqua;
-  /* text-shadow: rgb(255 255 255 / 25%) 5px 5px 10px; */
-  /* color: rgb(97, 88, 88); */
-}
+
 .questions a {
   text-decoration: none;
 }
@@ -137,6 +130,7 @@ a {
 /* rgb(2 12 27 / 80%) */
 .individual-question:hover {
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
+  color: aqua;
   transition: 0.1s;
 }
 .individual-question .details {
