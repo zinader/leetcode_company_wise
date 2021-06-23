@@ -5,6 +5,10 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import firebase from "firebase";
 import firebaseConfig from "./firebaseConfig";
+import splitbee from "@splitbee/web";
+
+// This initiliazes Splitbee.js
+splitbee.init();
 
 firebase.initializeApp(firebaseConfig);
 
