@@ -200,7 +200,7 @@ a {
   .filter-button {
     position: absolute;
     top: 360px;
-    margin-left: 30px;
+    margin-left: -2px;
   }
 
   .company-name {
@@ -231,8 +231,8 @@ a {
   }
 
   .individual-question {
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -30px;
+    margin-right: -12px;
   }
 
   .individual-question .details {
