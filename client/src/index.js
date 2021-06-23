@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import firebase from "firebase";
-import firebaseConfig from "./firebaseConfig";
+import splitbee from "@splitbee/web";
 
-firebase.initializeApp(firebaseConfig);
+// This initiliazes Splitbee.js
+splitbee.init();
 
 ReactDOM.render(
   <React.StrictMode>
