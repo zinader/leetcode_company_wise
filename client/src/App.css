@@ -107,6 +107,11 @@ a {
   font-weight: bold !important;
 }
 
+.all {
+  color: aqua !important;
+  font-weight: bold !important;
+}
+
 .difficulty {
   /* position: absolute;
   right: 175px; */
@@ -166,7 +171,7 @@ a {
 }
 
 .search-input {
-  color: rgb(10, 25, 47) !important;
+  color: rgba(255, 255, 255, 0.698) !important;
   font-weight: bold;
   border-radius: 6px;
   border: none;
@@ -195,7 +200,7 @@ a {
   .filter-button {
     position: absolute;
     top: 360px;
-    margin-left: 30px;
+    margin-left: -2px;
   }
 
   .company-name {
@@ -226,8 +231,8 @@ a {
   }
 
   .individual-question {
-    margin-left: -20px;
-    margin-right: -20px;
+    margin-left: -30px;
+    margin-right: -12px;
   }
 
   .individual-question .details {
