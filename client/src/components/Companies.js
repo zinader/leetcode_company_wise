@@ -75,17 +75,15 @@ const CompanyComponent = () => {
                 <>
                   {tempcompanies?.map((data) => (
                     <div className="col-md-4">
-                      <div className="companies-div">
-                        <h1>
-                          <Link
-                            to={`/companies/${data}`}
-                            onClick={refreshPage}
-                            style={{ textDecoration: "none" }}
-                          >
-                            {data}
-                          </Link>
-                        </h1>
-                      </div>
+                      <Link
+                        to={`/companies/${data}`}
+                        onClick={refreshPage}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="companies-div">
+                          <h1>{data}</h1>
+                        </div>
+                      </Link>
                     </div>
                   ))}
                 </>
