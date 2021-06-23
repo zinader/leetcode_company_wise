@@ -41,7 +41,7 @@ a {
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
 }
 .companies-div h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 0;
 }
 .companies-div h1 a:hover {
@@ -54,7 +54,7 @@ a {
   font-size: 10px !important;
 }
 .company-name {
-  font-size: 35px;
+  font-size: 30px;
   margin-left: 40px;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@ a {
   margin-bottom: 0%;
 }
 .questions h1 a {
-  font-size: 1.4rem;
+  font-size: 27px;
   /* margin-bottom: 0%; */
 }
 .questions h1 a:hover {
@@ -96,15 +96,15 @@ a {
 }
 .easy {
   color: #21fd5e !important;
-  font-weight: 300 !important;
+  font-weight: bold !important;
 }
 .medium {
   color: yellow !important;
-  font-weight: 300 !important;
+  font-weight: bold !important;
 }
 .hard {
   color: red !important;
-  font-weight: 300 !important;
+  font-weight: bold !important;
 }
 
 .difficulty {
@@ -153,12 +153,39 @@ a {
 
 .no-results {
   position: absolute;
-  top: 300px;
-  left: 600px;
+  top: 400px;
+  left: 700px;
 }
 
-.no-results h3 {
-  font-size: 50px;
+*:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.698);
+}
+
+.search-input {
+  color: rgb(10, 25, 47) !important;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  margin-right: 10px;
+  padding-left: 10px;
+  margin-left: 20px;
+  background-color: rgb(23, 42, 69);
+  margin-bottom: 30px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.search-input:hover {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
+  transition: 0.6ms;
+}
+
+.search-icon {
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -178,9 +205,32 @@ a {
   .questions {
     width: 320px;
   }
+
+  .questions h1 {
+    width: 120px;
+    line-height: 25px;
+  }
+
+  .questions h1 a {
+    font-size: 22px;
+    /* margin-bottom: 0%; */
+  }
+
   .no-results {
     position: absolute;
-    top: 460px;
-    left: 80px;
+    top: 420px;
+    left: 200px;
+  }
+  .difficulty {
+    font-size: 20px;
+  }
+
+  .individual-question {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .individual-question .details {
+    align-items: center;
   }
 }
