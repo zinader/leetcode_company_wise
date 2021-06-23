@@ -181,7 +181,7 @@ a {
 
 .search-input:hover {
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
-  transition: 0.9ms;
+  transition: 0.6ms;
 }
 
 .search-icon {
