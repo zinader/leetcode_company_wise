@@ -9,13 +9,6 @@ import "../App";
 const CompanyComponent = () => {
   const [companies, setCompanies] = useState([]);
   const [isLoading, setLoading] = useState(true);
-  const [q, setQ] = useState("");
-  //     set search parameters
-  //     we only what to search countries by capital and name
-  //     this list can be longer if you want
-  //     you can search countries even by their population
-  // just add it to this array
-  const [searchParam] = useState(["Company_Name"]);
 
   useEffect(() => {
     setTimeout(async () => {
@@ -52,8 +45,6 @@ const CompanyComponent = () => {
               id="search-form"
               className="search-input"
               placeholder="Search"
-              value={q}
-              onChange={(e) => setQ(e.target.value)}
             />
             <span className="search-icon">
               <FaSearch />

@@ -107,6 +107,11 @@ a {
   font-weight: bold !important;
 }
 
+.all {
+  color: aqua !important;
+  font-weight: bold !important;
+}
+
 .difficulty {
   /* position: absolute;
   right: 175px; */

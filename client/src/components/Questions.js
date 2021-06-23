@@ -12,7 +12,11 @@ const QuestionsComponent = (props) => {
 
   const sortCat = (q) => {
     var newList = apiData?.filter((i) => {
-      return i.Difficulty.toLowerCase() === q;
+      if (q !== "all") {
+        return i.Difficulty.toLowerCase() === q;
+      } else {
+        return true;
+      }
     });
 
     setQuestions(newList);
@@ -58,6 +62,9 @@ const QuestionsComponent = (props) => {
           </a>
           <a className="hard" onClick={() => sortCat("hard")}>
             #hard
+          </a>
+          <a className="all" onClick={() => sortCat("all")}>
+            #all
           </a>
           {/* <Button variant="light">Easy</Button>
           <Button variant="light">Medium</Button>
