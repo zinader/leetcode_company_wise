@@ -89,7 +89,7 @@ const QuestionsComponent = (props) => {
                         className={`difficulty pr-2 ${data.Difficulty.toLowerCase()}`}
                       >
                         {" "}
-                        #{data.Difficulty.toLowerCase()}
+                        {data.Difficulty.toLowerCase()}
                       </span>
                       {/* <span className="percentage"> {data.Percentage}</span> */}
                     </div>
