@@ -1,6 +1,5 @@
 import json
 
-
 all_questions = []
 with open('data.json') as data_file:
     all_questions = json.load(data_file)
