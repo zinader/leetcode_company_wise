@@ -6,7 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 
 const QuestionsComponent = withRouter((props) => {
   var data_filter = customData.filter(
-    (element) => element.Company_Name == props.match.url.split("/")[2]
+    (element) => element.Company_Name === props.match.url.split("/")[2]
   );
 
   const [questions, setQuestions] = useState(data_filter);
