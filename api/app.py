@@ -18,6 +18,9 @@ list_companies = list(dict.fromkeys(list_companies))
 list_companies.sort()
 
 
+with open('companies.json', 'w') as f:
+    f.write(json.dumps(list_companies, ensure_ascii=False))
+
 @app.route('/companies')
 def getCompanies():
     
