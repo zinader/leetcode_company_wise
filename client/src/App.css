@@ -44,7 +44,7 @@ a {
   font-size: 1.8rem;
   margin-bottom: 0;
 }
-.companies-div h1 a:hover {
+.companies-div :hover {
   color: aqua;
 }
 .questions {
