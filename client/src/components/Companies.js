@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import customData from "./companies.json";
-
 import "../App";
 
 const CompanyComponent = () => {
@@ -13,7 +12,6 @@ const CompanyComponent = () => {
     setTimeout(() => {
       window.location.reload(false);
     }, 0);
-    console.log("page to reload");
   }
 
   const filter = (e) => {
