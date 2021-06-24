@@ -194,19 +194,20 @@ a {
   background-color: rgb(23, 42, 69);
   margin-top: 2rem;
 }
-.footer p{
+.footer p {
   margin: 0;
   text-align: center;
   padding: 0.5rem;
+  font-size: 0.9rem;
 }
-.footer p a{
+.footer p a {
   font-weight: 700;
 }
-.footer p a:hover{
+.footer p a:hover {
   color: gold;
   text-decoration: none;
 }
-.footer span{
+.footer span {
   color: red;
   font-size: 1.5rem;
 }
