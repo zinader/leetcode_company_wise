@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Header from "./Header";
 import { FaBackward } from "react-icons/fa";
 import customData from "./data.json";
+import { Link, withRouter } from "react-router-dom";
 
-const QuestionsComponent = (props) => {
+const QuestionsComponent = withRouter((props) => {
   var data_filter = customData.filter(
     (element) => element.Company_Name == props.match.url.split("/")[2]
   );
@@ -27,9 +28,9 @@ const QuestionsComponent = (props) => {
     <div>
       <Header />
       <div className="company-name">
-        <a style={{ display: "flex" }} className="pr-3" href="/">
+        <Link style={{ display: "flex" }} className="pr-3" to="/">
           <FaBackward />
-        </a>
+        </Link>
         <span>{props.match.url.split("/")[2]}</span>
         <div className="filter-button">
           <a className="easy" onClick={() => sortCat("easy")}>
@@ -78,6 +79,6 @@ const QuestionsComponent = (props) => {
       </div>
     </div>
   );
-};
+});
 
 export default QuestionsComponent;
