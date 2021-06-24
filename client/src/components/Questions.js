@@ -1,48 +1,27 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import Header from "./Header";
 import { FaBackward } from "react-icons/fa";
-import HashLoader from "react-spinners/HashLoader";
+import customData from "./data.json";
 
 const QuestionsComponent = (props) => {
-  const [questions, setQuestions] = useState([]);
-  const [apiData, setApiData] = useState([]);
-  const [companyName, setCompanyName] = useState("");
-  const [isLoading, setLoading] = useState(true);
+  var data_filter = customData.filter(
+    (element) => element.Company_Name == props.match.url.split("/")[2]
+  );
+
+  const [questions, setQuestions] = useState(data_filter);
 
   const sortCat = (q) => {
-    var newList = apiData?.filter((i) => {
+    var newList = data_filter?.filter((i) => {
       if (q !== "all") {
         return i.Difficulty.toLowerCase() === q;
       } else {
+        setQuestions(questions);
         return true;
       }
     });
 
     setQuestions(newList);
   };
-
-  useEffect(() => {
-    setTimeout(async () => {
-      await axios
-        .get("https://leetcode-api.herokuapp.com" + props.match.url)
-        .then((res) => {
-          setApiData(res.data.data);
-          setQuestions(res.data.data);
-          setLoading(false);
-        });
-
-      setCompanyName(props.match.url.split("/")[2]);
-    }, 500);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="no-results">
-        <HashLoader size={156} color="aqua" loading />
-      </div>
-    );
-  }
 
   return (
     <div>
@@ -51,7 +30,7 @@ const QuestionsComponent = (props) => {
         <a style={{ display: "flex" }} className="pr-3" href="/">
           <FaBackward />
         </a>
-        <span>{companyName}</span>
+        <span>{props.match.url.split("/")[2]}</span>
         <div className="filter-button">
           <a className="easy" onClick={() => sortCat("easy")}>
             #easy
@@ -84,7 +63,6 @@ const QuestionsComponent = (props) => {
                           {" "}
                           {data.Difficulty.toLowerCase()}
                         </span>
-                        {/* <span className="percentage"> {data.Percentage}</span> */}
                       </div>
                     </div>
                   </a>
