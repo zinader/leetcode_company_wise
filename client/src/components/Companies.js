@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-import HashLoader from "react-spinners/HashLoader";
 import { FaSearch } from "react-icons/fa";
+import customData from "./companies.json";
 
 import "../App";
 
 const CompanyComponent = () => {
-  const [companies, setCompanies] = useState([]);
-  const [isLoading, setLoading] = useState(true);
-
+  const [companies, setCompanies] = useState(customData);
   const [tempcompanies, setTempCompanies] = useState([]);
-
-  useEffect(() => {
-    setTimeout(async () => {
-      await axios
-        .get("https://leetcode-api.herokuapp.com/companies")
-        .then((res) => setCompanies(res.data), setLoading(false));
-    }, 500);
-  });
 
   function refreshPage() {
     setTimeout(() => {
@@ -27,21 +16,13 @@ const CompanyComponent = () => {
     console.log("page to reload");
   }
 
-  if (isLoading) {
-    return (
-      <div className="no-results">
-        <HashLoader size={156} color="aqua" loading />
-      </div>
-    );
-  }
-
   const filter = (e) => {
     const keyword = e.target.value;
 
     if (keyword == "") {
       setTempCompanies(companies);
     } else {
-      const results = companies?.data?.filter((company) => {
+      const results = companies?.filter((company) => {
         return company.toLowerCase().startsWith(keyword.toLowerCase());
       });
       setTempCompanies(results);
@@ -89,7 +70,7 @@ const CompanyComponent = () => {
                 </>
               ) : (
                 <>
-                  {companies?.data?.map((data) => (
+                  {companies?.map((data) => (
                     <div className="col-md-4">
                       <div className="companies-div">
                         <h1>
