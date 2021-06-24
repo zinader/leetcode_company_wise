@@ -153,7 +153,11 @@ a {
 .no-results {
   position: absolute;
   top: 400px;
-  left: 700px;
+  left: 550px;
+}
+
+.no-results h3 {
+  font-size: 50px;
 }
 
 *:focus {
@@ -225,9 +229,14 @@ a {
 
   .no-results {
     position: absolute;
-    top: 420px;
-    left: 200px;
+    top: 400px;
+    left: 110px;
   }
+
+  .no-results h3 {
+    font-size: 35px;
+  }
+
   .difficulty {
     font-size: 20px;
   }
