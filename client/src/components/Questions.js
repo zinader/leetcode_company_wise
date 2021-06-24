@@ -1,86 +1,78 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import Header from "./Header";
 import { FaBackward } from "react-icons/fa";
-import Button from "react-bootstrap/Button";
+import customData from "./data.json";
 
 const QuestionsComponent = (props) => {
-  const [questions, setQuestions] = useState([]);
-  const [apiData, setApiData] = useState([]);
-  const [companyName, setCompanyName] = useState('')
+  var data_filter = customData.filter(
+    (element) => element.Company_Name == props.match.url.split("/")[2]
+  );
+
+  const [questions, setQuestions] = useState(data_filter);
 
   const sortCat = (q) => {
-    // window.location.reload()
-    console.log(questions)
-    var newList = apiData?.filter((i) => {
-      return i.Difficulty.toLowerCase() === q
-    })
+    var newList = data_filter?.filter((i) => {
+      if (q !== "all") {
+        return i.Difficulty.toLowerCase() === q;
+      } else {
+        setQuestions(questions);
+        return true;
+      }
+    });
 
-    setQuestions(newList)
-  }
-
-  useEffect(() => {
-    console.log('t')
-    setTimeout(async () => {
-      await axios
-        .get("https://leetcode-api.herokuapp.com" + props.match.url)
-        .then((res) => {
-          setApiData(res.data.data);
-          setQuestions(res.data.data)
-        });
-
-      setCompanyName(props.match.url.split('/')[2])
-    }, 500);
-    console.log(questions)
-  }, []);
+    setQuestions(newList);
+  };
 
   return (
     <div>
       <Header />
       <div className="company-name">
-        <a style={{ display: 'flex' }} className='pr-3' href="/">
+        <a style={{ display: "flex" }} className="pr-3" href="/">
           <FaBackward />
         </a>
-        <span>{companyName}</span>
+        <span>{props.match.url.split("/")[2]}</span>
         <div className="filter-button">
-          <a className='easy' onClick={() => sortCat('easy')}>
+          <a className="easy" onClick={() => sortCat("easy")}>
             #easy
           </a>
-          <a className='medium' onClick={() => sortCat('medium')}>
+          <a className="medium" onClick={() => sortCat("medium")}>
             #medium
           </a>
-          <a className='hard' onClick={() => sortCat('hard')}>
+          <a className="hard" onClick={() => sortCat("hard")}>
             #hard
           </a>
-          {/* <Button variant="light">Easy</Button>
-          <Button variant="light">Medium</Button>
-          <Button variant="light">Hard</Button> */}
+          <a className="all" onClick={() => sortCat("all")}>
+            #all
+          </a>
         </div>
-        <div className="back-icon">
-        </div>
+        <div className="back-icon"></div>
       </div>
-      <div className='container-fluid'>
-        <div className='row questions'>
+      <div className="container-fluid">
+        <div className="row questions">
           {questions.length > 0 ? (
             <>
               {questions?.map((data) => (
-                <div className='col-12'>
-                  <div className="individual-question">
-                    <h1>
-                      <a href={`${data.Link}`} target="_blank" rel="noreferrer">
-                        {data.Name}
-                      </a>
-                    </h1>
-                    <div className='details'>
-                      <span className={`difficulty pr-2 ${data.Difficulty.toLowerCase()}`}> #{data.Difficulty.toLowerCase()}</span>
-                      {/* <span className="percentage"> {data.Percentage}</span> */}
+                <div className="col-12">
+                  <a href={`${data.Link}`} target="_blank" rel="noreferrer">
+                    <div className="individual-question">
+                      <h1>{data.Name}</h1>
+                      <div className="details">
+                        <span
+                          className={`difficulty pr-2 ${data.Difficulty.toLowerCase()}`}
+                        >
+                          {" "}
+                          {data.Difficulty.toLowerCase()}
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </>
           ) : (
-            <h3>No results!</h3>
+            <div className="no-results">
+              <h3>No results!</h3>
+            </div>
           )}
         </div>
       </div>

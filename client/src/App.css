@@ -6,10 +6,10 @@
   padding: 0%;
   font-family: "Montserrat", sans-serif;
 }
-body{
-    background-color: rgb(10, 25, 47);
+body {
+  background-color: rgb(10, 25, 47);
 }
-a{
+a {
   color: #fff;
 }
 .heading {
@@ -37,14 +37,14 @@ a{
   padding: 0.5rem;
   border-radius: 6px;
 }
-.companies-div:hover{
-  box-shadow:  0px 6px 6px rgba(0, 0, 0, 0.50);
+.companies-div:hover {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
 }
-.companies-div h1{
-  font-size: 2rem;
+.companies-div h1 {
+  font-size: 1.8rem;
   margin-bottom: 0;
 }
-.companies-div h1 a:hover{
+.companies-div :hover {
   color: aqua;
 }
 .questions {
@@ -54,24 +54,17 @@ a{
   font-size: 10px !important;
 }
 .company-name {
-  font-size: 35px;
+  font-size: 30px;
   margin-left: 40px;
   display: flex;
   align-items: center;
   margin-top: 20px;
 }
-.questions h1{
+.questions h1 {
   margin-bottom: 0%;
+  font-size: 27px;
 }
-.questions h1 a{
-  font-size: 2rem;
-  /* margin-bottom: 0%; */
-}
-.questions h1 a:hover{
-  color: aqua;
-  /* text-shadow: rgb(255 255 255 / 25%) 5px 5px 10px; */
-  /* color: rgb(97, 88, 88); */
-}
+
 .questions a {
   text-decoration: none;
 }
@@ -94,17 +87,22 @@ a{
   cursor: pointer;
   font-weight: bold;
 }
-.easy{
-  color: #21FD5E!important;
-  font-weight: 300 !important;
+.easy {
+  color: #21fd5e !important;
+  font-weight: bold !important;
 }
-.medium{
+.medium {
   color: yellow !important;
-  font-weight: 300 !important;
+  font-weight: bold !important;
 }
-.hard{
+.hard {
   color: red !important;
-  font-weight: 300 !important;
+  font-weight: bold !important;
+}
+
+.all {
+  color: aqua !important;
+  font-weight: bold !important;
 }
 
 .difficulty {
@@ -130,11 +128,12 @@ a{
   background-color: rgb(23, 42, 69);
 }
 /* rgb(2 12 27 / 80%) */
-.individual-question:hover{
-  box-shadow:  0px 6px 6px rgba(0, 0, 0, 0.50);
+.individual-question:hover {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
+  color: aqua;
   transition: 0.1s;
 }
-.individual-question .details{
+.individual-question .details {
   display: flex;
   align-items: center;
 }
@@ -144,32 +143,129 @@ a{
 }
 
 .loading {
-  font-size: 20px;
-  margin-left: 40px;
-  margin-top: 20px;
-  font-weight: bold;
+  background-color: aliceblue !important;
+  color: #21fd5e !important;
+  position: absolute;
+  left: 400px;
+  top: 200px;
 }
 
+.no-results {
+  position: absolute;
+  top: 400px;
+  left: 550px;
+}
+
+.no-results h3 {
+  font-size: 50px;
+}
+
+*:focus {
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.698);
+}
+
+.search-input {
+  color: rgba(255, 255, 255, 0.698) !important;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  margin-right: 10px;
+  padding-left: 10px;
+  margin-left: 20px;
+  background-color: rgb(23, 42, 69);
+  margin-bottom: 30px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.search-input:hover {
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
+  transition: 0.6ms;
+}
+
+.search-icon {
+  font-size: 14px;
+}
+.footer {
+  background-color: rgb(23, 42, 69);
+  margin-top: 2rem;
+}
+.footer p{
+  margin: 0;
+  text-align: center;
+  padding: 0.5rem;
+}
+.footer p a{
+  font-weight: 700;
+}
+.footer p a:hover{
+  color: gold;
+  text-decoration: none;
+}
+.footer span{
+  color: red;
+  font-size: 1.5rem;
+}
 @media only screen and (max-width: 768px) {
-  /* .heading {
-    width: 100px;
+  .heading {
+    font-size: 25px;
+    width: 260px;
+    margin-top: 30px;
+    font-weight: bolder !important;
+  }
+
+  .search-input {
+    margin-left: 0px;
+  }
+
+  .filter-button {
+    position: absolute;
+    top: 180px;
+    margin-left: -8px;
+  }
+
+  .company-name {
+    margin-bottom: 80px;
+  }
+
+  .questions {
+    width: 320px;
+  }
+
+  .questions h1 {
+    width: 120px;
+    line-height: 25px;
+  }
+
+  .questions h1 a {
+    font-size: 22px;
+    /* margin-bottom: 0%; */
+  }
+
+  .no-results {
+    position: absolute;
+    top: 400px;
+    left: 110px;
+  }
+
+  .no-results h3 {
+    font-size: 35px;
+  }
+
+  .difficulty {
+    font-size: 20px;
   }
 
   .individual-question {
-    margin-bottom: 40px;
-    width: 100px;
-  }
-  .difficulty {
-    position: absolute;
-    right: 100px;
-    font-size: 20px !important;
-    color: aqua;
-    font-size: 18px;
+    margin-left: -30px;
+    margin-right: -12px;
   }
 
-  .percentage {
-    position: absolute;
-    right: 25px !important;
-    font-size: 18px !important;
-  } */
+  .individual-question .details {
+    align-items: center;
+  }
 }

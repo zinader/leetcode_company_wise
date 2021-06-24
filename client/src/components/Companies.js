@@ -1,53 +1,89 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Link, BrowserRouter as Router } from "react-router-dom";
-
+import { FaSearch } from "react-icons/fa";
+import customData from "./companies.json";
 import "../App";
 
 const CompanyComponent = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [companies, setCompanies] = useState([]);
-
-  useEffect(() => {
-    setTimeout(async () => {
-      await axios
-        .get("https://leetcode-api.herokuapp.com/companies")
-        .then((res) => setCompanies(res.data), setLoading(false));
-    }, 500);
-    console.log(companies?.data?.[0]);
-  });
-
-  if (isLoading) {
-    return <div className="loading">Loading...</div>;
-  }
+  const [companies, setCompanies] = useState(customData);
+  const [tempcompanies, setTempCompanies] = useState([]);
 
   function refreshPage() {
     setTimeout(() => {
       window.location.reload(false);
     }, 0);
-    console.log("page to reload");
   }
+
+  const filter = (e) => {
+    const keyword = e.target.value;
+
+    if (keyword == "") {
+      setTempCompanies(companies);
+    } else {
+      const results = companies?.filter((company) => {
+        return company.toLowerCase().startsWith(keyword.toLowerCase());
+      });
+      setTempCompanies(results);
+      if (results.length == 0) {
+        setCompanies(companies);
+      }
+    }
+  };
 
   return (
     <Router>
-      <div className='container-fluid'>
-        <div className="companies">
-          <div className='row'>
-            {companies?.data?.map((data) => (
-              <div className="col-md-4">
-                <div className='companies-div'>
-                  <h1>
-                    <Link
-                      to={`/companies/${data}`}
-                      onClick={refreshPage}
-                      style={{ textDecoration: "none" }}
-                    >
-                      {data}
-                    </Link>
-                  </h1>
-                </div>
-              </div>
-            ))}
+      <div className="container-fluid">
+        <div className="search-wrapper">
+          <label htmlFor="search-form">
+            <input
+              type="search"
+              name="search-form"
+              id="search-form"
+              className="search-input"
+              placeholder="Search"
+              onChange={filter}
+            />
+            <span className="search-icon">
+              <FaSearch />
+            </span>
+          </label>
+
+          <div className="companies">
+            <div className="row">
+              {tempcompanies.length > 0 ? (
+                <>
+                  {tempcompanies?.map((data) => (
+                    <div className="col-md-4">
+                      <Link
+                        to={`/companies/${data}`}
+                        onClick={refreshPage}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="companies-div">
+                          <h1>{data}</h1>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <>
+                  {companies?.map((data) => (
+                    <div className="col-md-4">
+                      <Link
+                        to={`/companies/${data}`}
+                        onClick={refreshPage}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <div className="companies-div">
+                          <h1>{data}</h1>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
