@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import customData from "./companies.json";
+import customData from "./data/companies.json";
 import "../App";
 
 const CompanyComponent = withRouter(() => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import { FaBackward } from "react-icons/fa";
-import customData from "./data.json";
+import customData from "./data/data.json";
 import { Link, withRouter } from "react-router-dom";
 
 const QuestionsComponent = withRouter((props) => {
