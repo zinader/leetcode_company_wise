@@ -190,7 +190,26 @@ a {
 .search-icon {
   font-size: 14px;
 }
-
+.footer {
+  background-color: rgb(23, 42, 69);
+  margin-top: 2rem;
+}
+.footer p{
+  margin: 0;
+  text-align: center;
+  padding: 0.5rem;
+}
+.footer p a{
+  font-weight: 700;
+}
+.footer p a:hover{
+  color: gold;
+  text-decoration: none;
+}
+.footer span{
+  color: red;
+  font-size: 1.5rem;
+}
 @media only screen and (max-width: 768px) {
   .heading {
     font-size: 25px;
