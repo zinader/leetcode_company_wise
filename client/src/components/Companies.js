@@ -11,6 +11,8 @@ const CompanyComponent = withRouter(() => {
   const filter = (e) => {
     const keyword = e.target.value;
 
+    const keywordWithNoResults = ["No results for " + keyword];
+
     if (!keyword) {
       setTempCompanies(companies);
     } else {
@@ -19,7 +21,7 @@ const CompanyComponent = withRouter(() => {
       });
       setTempCompanies(results);
       if (!results.length) {
-        setCompanies(companies);
+        setTempCompanies(keywordWithNoResults);
       }
     }
   };
