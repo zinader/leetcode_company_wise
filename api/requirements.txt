@@ -10,5 +10,5 @@ gunicorn==19.10.0
 MarkupSafe==2.0.1
 requests==2.25.1
 six==1.16.0
-urllib3==1.26.5
+urllib3==1.26.18
 Werkzeug==2.0.1
