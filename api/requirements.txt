@@ -3,7 +3,7 @@ chardet==4.0.0
 click==8.0.1
 Flask==2.0.1
 Flask-Cors==3.0.10
-idna==2.10
+idna==3.7
 itsdangerous==2.0.1
 Jinja2==3.0.1
 gunicorn==19.10.0
