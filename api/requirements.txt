@@ -6,7 +6,7 @@ Flask-Cors==3.0.10
 idna==2.10
 itsdangerous==2.0.1
 Jinja2==3.0.1
-gunicorn==19.10.0
+gunicorn==21.2.0
 MarkupSafe==2.0.1
 requests==2.25.1
 six==1.16.0
